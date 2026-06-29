@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngo Thuc Hoang | Personal Portfolio</title>
+    <meta name="description" content="Personal portfolio of Ngo Thuc Hoang, Finance student at UEH. CFA Level 1, GPA 3.52, research in trade policy uncertainty and monetary policy spillovers.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Sticky Navigation -->
+    <header id="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="gradient-text">Hoang</span>.Ngo
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education & Skills</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-btn" class="btn-icon mobile-only" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge-hero">
+                    <i class="fas fa-graduation-cap"></i> Finance Student & Researcher
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Ngo Thuc Hoang</span>
+                </h1>
+                <p class="hero-subtitle">
+                    An academically driven Finance student at <strong>UEH University</strong> (GPA 3.52/4.0) and <strong>CFA Level 1 Passed</strong> candidate. Specializing in financial modeling, quantitative econometric research, and market spillovers analysis.
+                </p>
+                <div class="hero-cta">
+                    <a href="#research" class="btn primary">Explore Research</a>
+                    <a href="./CV_NgoThucHoang.pdf" class="btn secondary" download><i class="fas fa-download"></i> Download CV</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="avatar-glow"></div>
+                <div class="avatar-container">
+                    <img src="Anhcv_suit_white.png" alt="Ngo Thuc Hoang" class="avatar-img" onerror="this.src='Anhcv_suit.png'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container scroll-reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">About Me</h2>
+                <div class="underline mx-auto"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass">
+                    <h3>Who I Am</h3>
+                    <p>
+                        I am currently a third-year undergraduate student enrolled in the English-taught program of the Finance Department at the University of Economics Ho Chi Minh City (UEH). With only one internship semester remaining, I am preparing to transition into a full-time financial analyst or research professional.
+                    </p>
+                    <p>
+                        My passion lies in bridging academic economic theories with computational finance. I enjoy analyzing market volatilities, interest rate actions, and geopolitics to find empirical trends that help investors and institutions make optimal risk-adjusted decisions.
+                    </p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card glass text-center">
+                        <div class="stat-icon"><i class="fas fa-award"></i></div>
+                        <div class="stat-number">3.52 <span class="stat-scale">/ 4.0</span></div>
+                        <div class="stat-label">Cumulative GPA</div>
+                    </div>
+                    <div class="stat-card glass text-center">
+                        <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="stat-number">CFA <span class="stat-scale">Lvl 1</span></div>
+                        <div class="stat-label">Passed First Attempt</div>
+                    </div>
+                    <div class="stat-card glass text-center">
+                        <div class="stat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <div class="stat-number">2 <span class="stat-scale">Papers</span></div>
+                        <div class="stat-label">Scientific Research</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Skills Section -->
+    <section id="education" class="section-padding bg-alt">
+        <div class="container scroll-reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">Education & Credentials</h2>
+                <div class="underline mx-auto"></div>
+            </div>
+            <div class="edu-skills-grid">
+                <!-- Education Timeline -->
+                <div class="edu-card glass">
+                    <div class="edu-card-header">
+                        <i class="fas fa-university icon-header"></i>
+                        <h3>Academic History</h3>
+                    </div>
+                    <div class="edu-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-date">2023 - Present (Expected Dec 2026)</span>
+                            <h4>Bachelor of Business Administration in Finance</h4>
+                            <h5>University of Economics Ho Chi Minh City (UEH)</h5>
+                            <p class="edu-desc">
+                                Fully English-taught high-quality program. Focused heavily on quantitative finance, market analysis, and research methodologies.
+                            </p>
+                            <span class="timeline-badge">GPA: 3.52/4.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Certifications -->
+                <div class="skills-card glass">
+                    <div class="skills-card-header">
+                        <i class="fas fa-id-card icon-header"></i>
+                        <h3>Skills & Certifications</h3>
+                    </div>
+                    <div class="skills-section">
+                        <h4>Professional Credentials</h4>
+                        <div class="chips-container">
+                            <span class="chip gold"><i class="fas fa-award"></i> CFA Level 1 Passed</span>
+                            <span class="chip blue"><i class="fas fa-language"></i> IELTS Academic 6.0 (2022)</span>
+                            <span class="chip blue"><i class="fas fa-chart-line"></i> Power BI Certified</span>
+                            <span class="chip text-chip"><i class="fas fa-file-word"></i> MOS Word</span>
+                            <span class="chip text-chip"><i class="fas fa-file-excel"></i> MOS Excel</span>
+                            <span class="chip text-chip"><i class="fas fa-file-powerpoint"></i> MOS PowerPoint</span>
+                        </div>
+                    </div>
+                    <div class="skills-section">
+                        <h4>Financial & Quantitative Competencies</h4>
+                        <div class="skills-bar-wrapper">
+                            <div class="skill-info">
+                                <span>Econometric Modeling (GARCH, VAR, Event Studies)</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="skill-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skills-bar-wrapper">
+                            <div class="skill-info">
+                                <span>Financial Analysis & Valuation (DCF, CAPM)</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="skill-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skills-bar-wrapper">
+                            <div class="skill-info">
+                                <span>Data Visualization (Power BI, Excel Dashboard)</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="skill-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skills-bar-wrapper">
+                            <div class="skill-info">
+                                <span>Client Relations & Proposal Formulation</span>
+                                <span>Intermediate</span>
+                            </div>
+                            <div class="skill-progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section-padding">
+        <div class="container scroll-reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">Academic Research</h2>
+                <p class="section-subtitle">Pioneering analysis on global policy shocks and financial market transmission.</p>
+                <div class="underline mx-auto"></div>
+            </div>
+            <div class="research-grid">
+                <!-- Research Card 1 -->
+                <div class="research-card glass scroll-reveal" data-paper="paper1">
+                    <div class="card-tag">iCOB 2025 / COBRP 2025</div>
+                    <h3 class="card-title">Impact of the US-China Trade War on Asia Pacific's Stock Market Performance</h3>
+                    <p class="card-summary">
+                        Investigates how Trump's trade policies and Trade Policy Uncertainty (TPU) propagate shocks, abnormal returns, and conditional volatility across 12 APAC exchanges and 10 Vietnam VN-Index sectors in 2025.
+                    </p>
+                    <div class="card-methodology">
+                        <span class="method-badge">ARMAX-GARCH-M</span>
+                        <span class="method-badge">DCC-GARCH</span>
+                    </div>
+                    <button class="btn card-btn text-gradient">Read Analysis <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Research Card 2 -->
+                <div class="research-card glass scroll-reveal" data-paper="paper2">
+                    <div class="card-tag">CELG 2025 Presentation</div>
+                    <h3 class="card-title">Stock Market Reactions to U.S. Fed Rate Cuts: A Comparative U.S. - Vietnam Study</h3>
+                    <p class="card-summary">
+                        A comparative study measuring abnormal returns and dynamic volatility spillovers across 10 sectors in the U.S. and Vietnam during the 2019–2020 (COVID-19) and 2024–2025 recovery cycles.
+                    </p>
+                    <div class="card-methodology">
+                        <span class="method-badge">Event Study</span>
+                        <span class="method-badge">Diebold-Yilmaz VAR</span>
+                    </div>
+                    <button class="btn card-btn text-gradient">Read Analysis <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding bg-alt">
+        <div class="container scroll-reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="underline mx-auto"></div>
+            </div>
+            <div class="timeline-container scroll-reveal">
+                <div class="timeline-card glass">
+                    <div class="timeline-header">
+                        <div class="timeline-title-group">
+                            <span class="job-date"><i class="far fa-calendar-alt"></i> 3-Month Internship</span>
+                            <h3>Account Intern</h3>
+                            <h4>Brainad Marketing Agency</h4>
+                        </div>
+                        <div class="timeline-logo"><i class="fas fa-bullhorn"></i></div>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>
+                            <strong>Client & Project Management:</strong> Supported the client relationship team in bridging client demands with internal creative departments, drafting project briefs, and monitoring delivery calendars.
+                        </li>
+                        <li>
+                            <strong>Market Intelligence:</strong> Conducted market research and comprehensive competitor analysis to provide key strategic insights for pitching proposals and developing client marketing campaigns.
+                        </li>
+                        <li>
+                            <strong>Cross-functional Collaboration:</strong> Partnered closely with creative, digital operations, and designer groups to ensure timely and aligned executions of dynamic marketing campaigns.
+                        </li>
+                    </ul>
+                    <div class="chips-container mt-3">
+                        <span class="chip small">Client Relations</span>
+                        <span class="chip small">Market Research</span>
+                        <span class="chip small">Project Coordination</span>
+                        <span class="chip small">Strategic Briefing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container scroll-reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss academic research opportunities, professional placements, or collaborative projects.</p>
+                <div class="underline mx-auto"></div>
+            </div>
+            <div class="contact-grid">
+                <!-- Info cards -->
+                <div class="contact-info-wrapper">
+                    <div class="info-card glass">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Me</h4>
+                            <p><a href="mailto:ngothuchoang150905@gmail.com" class="contact-link">ngothuchoang150905@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+84832600277" class="contact-link">+84 83 260 0277</a></p>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <h4>LinkedIn Connection</h4>
+                            <p><a href="https://www.linkedin.com/in/th%C3%BAc-ho%C3%A0ng-ng%C3%B4-92a282347" class="contact-link" target="_blank">LinkedIn Profile</a></p>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div>
+                            <h4>Professional Resume</h4>
+                            <p><a href="./CV_NgoThucHoang.pdf" class="contact-link" download>Download CV_NgoThucHoang.pdf</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper glass">
+                    <form id="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="form-name">Full Name</label>
+                            <input type="text" id="form-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email Address</label>
+                            <input type="email" id="form-email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Your Message</label>
+                            <textarea id="form-message" rows="5" placeholder="I would like to discuss..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary w-full">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content text-center">
+            <p>&copy; 2026 Ngo Thuc Hoang. Built with Vanilla Web Technologies. All rights reserved.</p>
+            <p class="small text-muted mt-2">Connecting academic economics research with quantitative finance.</p>
+        </div>
+    </footer>
+
+    <!-- RESEARCH MODALS -->
+    <!-- Modal 1: Paper 1 -->
+    <div class="modal-overlay" id="modal-paper1" aria-hidden="true">
+        <div class="modal-container glass">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <span class="modal-tag">Research Paper 1 | iCOB 2025 & COBRP 2025</span>
+                <h2 class="modal-title">Impact of the US-China Trade War on Asia Pacific's Stock Market Performance: Challenges and Sustainable Approaches</h2>
+                
+                <!-- Tabs Navigation -->
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="tab1-abstract">Abstract</button>
+                    <button class="tab-btn" data-tab="tab1-methodology">Methodology</button>
+                    <button class="tab-btn" data-tab="tab1-findings">Key Findings & SDG 8</button>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="tab-content-wrapper">
+                    <!-- Abstract -->
+                    <div class="tab-content active" id="tab1-abstract">
+                        <p>
+                            Studies on the impact of the US-China trade war on financial markets over time have been conducted at many levels. Moving beyond historical 2018–2020 periods, this paper shifts attention to the 2025 period, highlighting how ongoing Trade Policy Uncertainty (TPU) continues to influence 12 Asia-Pacific financial markets and sectoral dynamics inside Vietnam.
+                        </p>
+                        <p>
+                            The research focuses on evaluating how trade conflict shocks influence abnormal returns, volatility behavior, and spillover effects across APAC stock exchanges and 10 industry groups within Vietnam’s VN-Index in 2025. It links financial resilience with United Nations SDG 8 (Decent Work and Economic Growth), offering a forward-looking perspective on sustaining growth amid prolonged trade tensions.
+                        </p>
+                    </div>
+                    <!-- Methodology -->
+                    <div class="tab-content" id="tab1-methodology">
+                        <h4>Mô hình hóa Biến động và Tác động Shock (ARMAX-GARCH-M & DCC)</h4>
+                        <p>
+                            The paper adopts a advanced volatility modeling framework:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Risk-Return Trade-off:</strong> Draws on the GARCH-in-Mean (GARCH-M) specification, introducing a conditional volatility risk premium term into the mean equation to capture how investors price assets under policy stress.
+                            </li>
+                            <li>
+                                <strong>ARMAX-GARCH-M (TPU):</strong> Integrates Trade Policy Uncertainty (TPU) as an exogenous variance regressor to measure its direct impact on conditional variance behavior.
+                            </li>
+                            <li>
+                                <strong>DCC-GARCH:</strong> Employs Dynamic Conditional Correlation (DCC) to trace the time-varying connectedness, identifying which economies act as primary transmitters or receivers of volatility.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Findings -->
+                    <div class="tab-content" id="tab1-findings">
+                        <h4>Academic and Practical Insights</h4>
+                        <ul>
+                            <li>
+                                <strong>Regional Transmission:</strong> Empirically maps the volatility connectedness of the 12 APAC markets, identifying Hong Kong as a key intermediary in absorbing and transmitting volatility between US, China, and APAC markets.
+                            </li>
+                            <li>
+                                <strong>Sectoral Sensitivity (Vietnam):</strong> Pinpoints Vietnamese industries with higher or lower sensitivity to tariff shocks, supporting portfolios in risk mitigation.
+                            </li>
+                            <li>
+                                <strong>SDG 8 Integration:</strong> Demonstrates that maintaining financial market stability through active risk pricing directly supports long-term economic growth and decent work opportunities in trade-exposed emerging markets.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Paper 2 -->
+    <div class="modal-overlay" id="modal-paper2" aria-hidden="true">
+        <div class="modal-container glass">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <span class="modal-tag">Research Paper 2 | CELG 2025 Presentation</span>
+                <h2 class="modal-title">Stock Market Reactions to U.S. Fed Rate Cuts: A Comparative Event Study of the U.S. and Vietnam, with an Analysis of Spillovers between the two Markets and within Vietnam's Sectors (2019 - 2020 & 2024 - 2025)</h2>
+                
+                <!-- Tabs Navigation -->
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="tab2-abstract">Abstract</button>
+                    <button class="tab-btn" data-tab="tab2-methodology">Methodology</button>
+                    <button class="tab-btn" data-tab="tab2-findings">Key Findings & SDG 8</button>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="tab-content-wrapper">
+                    <!-- Abstract -->
+                    <div class="tab-content active" id="tab2-abstract">
+                        <p>
+                            This research evaluates and compares U.S. and Vietnamese stock market reactions to conventional Federal Reserve policy rate cuts. It assesses the short-term market reaction magnitude and compares the responses of 10 industry groups within each country.
+                        </p>
+                        <p>
+                            To capture evolving investor behavior, the comparative analysis is conducted across two distinct macroeconomic cycles: the pre-pandemic normal phase (2019–2020) and the post-pandemic recovery/tightening turnaround phase (2024–2025). The study also maps volatility transmission, investigating cross-border spillovers from the U.S. to Vietnam and intra-market spillovers between domestic sectors.
+                        </p>
+                    </div>
+                    <!-- Methodology -->
+                    <div class="tab-content" id="tab2-methodology">
+                        <h4>Event Study & VAR Spillover Framework</h4>
+                        <p>
+                            The paper utilizes a integrated methodological framework:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Event Study:</strong> Computes Abnormal Returns (AR) and Cumulative Abnormal Returns (CAR) around Fed rate cut announcement windows to evaluate market efficiency and short-term announcement sensitivity.
+                            </li>
+                            <li>
+                                <strong>Diebold & Yilmaz (2012) Spillover Index:</strong> Applies a Vector Autoregression (VAR) framework with generalized forecast-error variance decompositions (GFEVD) to build a connectedness matrix.
+                            </li>
+                            <li>
+                                <strong>Cross-Border & Intra-Market Connectedness:</strong> Captures both international transmission (US to Vietnam sectors) and domestic sector-to-sector volatility propagation.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Findings -->
+                    <div class="tab-content" id="tab2-findings">
+                        <h4>Main Results & Policy Relevance</h4>
+                        <ul>
+                            <li>
+                                <strong>Macro Comparisons:</strong> Establishes that while unexpected rate cuts trigger general liquidity relief, responses vary heavily between pre-pandemic and post-pandemic cycles, reflecting changes in market risk-aversion.
+                            </li>
+                            <li>
+                                <strong>Transmission Roles:</strong> Identifies which specific industries act as net risk transmitters versus net receivers of volatility inside HOSE (Vietnam) and U.S. markets.
+                            </li>
+                            <li>
+                                <strong>Practical Application:</strong> Guides retail and institutional investors in developing sectoral hedging strategies, and assists state regulators in maintaining macro-prudential stability against external currency/monetary shocks (aligned with SDG 8).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
