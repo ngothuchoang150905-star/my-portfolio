@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTheme === 'light') {
         document.body.classList.add('light-theme');
         document.body.classList.remove('dark-theme');
-        themeToggleIcon.className = 'fas fa-moon';
+        themeToggleIcon.className = 'fa-solid fa-moon';
     } else {
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
-        themeToggleIcon.className = 'fas fa-sun';
+        themeToggleIcon.className = 'fa-solid fa-sun';
     }
 
     // Toggle theme action
@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.body.classList.contains('light-theme')) {
             document.body.classList.remove('light-theme');
             document.body.classList.add('dark-theme');
-            themeToggleIcon.className = 'fas fa-sun';
+            themeToggleIcon.className = 'fa-solid fa-sun';
             localStorage.setItem('theme', 'dark');
         } else {
             document.body.classList.add('light-theme');
             document.body.classList.remove('dark-theme');
-            themeToggleIcon.className = 'fas fa-moon';
+            themeToggleIcon.className = 'fa-solid fa-moon';
             localStorage.setItem('theme', 'light');
         }
     });
@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
         const icon = mobileMenuBtn.querySelector('i');
         if (navMenu.classList.contains('active')) {
-            icon.className = 'fas fa-times';
+            icon.className = 'fa-solid fa-xmark';
         } else {
-            icon.className = 'fas fa-bars';
+            icon.className = 'fa-solid fa-bars';
         }
     });
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+            mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars';
         });
     });
 
@@ -196,10 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Visual simulation of sending email
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending Message <i class="fas fa-spinner fa-spin ms-2"></i>';
+            submitBtn.innerHTML = 'Sending Message <i class="fa-solid fa-spinner fa-spin ms-2"></i>';
             
             setTimeout(() => {
-                submitBtn.innerHTML = 'Message Sent! <i class="fas fa-check ms-2"></i>';
+                submitBtn.innerHTML = 'Message Sent! <i class="fa-solid fa-check ms-2"></i>';
                 submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)'; // Emerald Green
                 
                 // Clear form inputs

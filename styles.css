@@ -1171,3 +1171,19 @@ footer {
         gap: 10px;
     }
 }
+
+/* CFA Highlight Styles */
+.stat-card.cfa-featured {
+    border: 2px solid #f59e0b !important;
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.15), 0 0 15px rgba(245, 158, 11, 0.1) !important;
+    transform: scale(1.03);
+}
+.stat-card.cfa-featured:hover {
+    transform: scale(1.06) translateY(-5px) !important;
+    box-shadow: 0 12px 40px rgba(245, 158, 11, 0.25), 0 0 25px rgba(245, 158, 11, 0.2) !important;
+}
+.stat-card.cfa-featured .stat-icon i {
+    color: #fbbf24 !important;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
