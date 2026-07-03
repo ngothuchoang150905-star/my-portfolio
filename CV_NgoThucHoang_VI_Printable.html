@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV_NgoThucHoang_VI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==========================================================================
+           RESET & SETUP (A4 AESTHETICS)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Printable A4 Page Container */
+        .cv-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            margin: 30px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 72mm 138mm;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Helper floating bar to prompt printing */
+        .print-helper {
+            max-width: 210mm;
+            margin: 20px auto 0;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 242, 254, 0.3);
+        }
+
+        /* ==========================================================================
+           LEFT SIDEBAR STYLING
+           ========================================================================== */
+        .sidebar {
+            background-color: #0f172a; /* Deep slate background */
+            color: #f8fafc;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .avatar-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .avatar-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #38bdf8;
+            background-color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .candidate-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .candidate-title {
+            font-size: 0.8rem;
+            color: #38bdf8;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sidebar Section Commons */
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-heading {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #38bdf8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        /* Contact Details */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+        }
+
+        .contact-item i {
+            color: #38bdf8;
+            width: 14px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        /* Credentials / Badges */
+        .credential-badge {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .credential-badge.gold {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.05) 100%) !important;
+            border: 1px solid rgba(245, 158, 11, 0.5) !important;
+            color: #fbbf24 !important;
+            font-weight: 700;
+        }
+
+        .credential-badge.gold i {
+            color: #fbbf24 !important;
+            text-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+        }
+
+        .credential-badge.blue i {
+            color: #38bdf8;
+        }
+
+        /* Skills Lists */
+        .skill-group-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skills-list {
+            list-style-type: none;
+            margin-bottom: 14px;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 0.9rem;
+            line-height: 1;
+            top: -1px;
+        }
+
+        /* ==========================================================================
+           MAIN CONTENT STYLING
+           ========================================================================== */
+        .main-content {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Content Section Commons */
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-heading {
+            font-size: 1.1rem;
+            color: #0f172a;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .section-heading i {
+            color: #0284c7;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 0.85rem;
+            color: #334155;
+            text-align: justify;
+        }
+
+        /* Academic Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 18px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #0284c7;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.8rem;
+            color: #0284c7;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.78rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .timeline-bullets {
+            margin-top: 6px;
+            list-style-type: none;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 0.78rem;
+            color: #475569;
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        .timeline-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0284c7;
+            font-weight: bold;
+        }
+
+        /* Research Item Block */
+        .research-item {
+            margin-bottom: 14px;
+        }
+
+        .research-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3px;
+        }
+
+        .research-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+        }
+
+        .research-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #0284c7;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: 10px;
+            background: #e0f2fe;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .research-methodology {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .research-methodology span {
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .research-desc {
+            font-size: 0.78rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           PRINT STYLING STUFF (CRITICAL)
+           ========================================================================== */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .print-helper {
+                display: none;
+            }
+            .cv-page {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating helper bar for printing (Hidden during printing) -->
+    <div class="print-helper no-print">
+        <span>📄 <strong>CV tiếng Việt</strong> đã được tạo. Nhấn lưu hoặc In thành PDF.</span>
+        <button class="print-btn" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> Lưu thành PDF
+        </button>
+    </div>
+
+    <!-- Main CV Sheet -->
+    <div class="cv-page">
+        
+        <!-- SIDEBAR (LEFT) -->
+        <aside class="sidebar">
+            
+            <!-- Avatar & Header -->
+            <div class="avatar-section">
+                <div class="avatar-container">
+                    <img src="Anhcv_shirt_white_polished.png" alt="Ngo Thuc Hoang" class="avatar-img" onerror="this.src='Anhcv.jpg'">
+                </div>
+                <h1 class="candidate-name">Ngô Thúc Hoàng</h1>
+                <p class="candidate-title">Phân tích Tài chính & Định lượng</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Thông tin liên hệ</h2>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+84 83 260 0277</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:ngothuchoang150905@gmail.com">ngothuchoang150905@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/th%C3%BAc-ho%C3%A0ng-ng%C3%B4-92a282347" target="_blank">Hồ sơ LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>TP. Hồ Chí Minh, Việt Nam</span>
+                </div>
+            </div>
+
+            <!-- Credentials Section -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Chứng chỉ</h2>
+                <div class="credential-badge gold">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Đã đỗ CFA Level 1</span>
+                </div>
+                <div class="credential-badge blue">
+                    <i class="fa-solid fa-language"></i>
+                    <span>IELTS Academic 6.0</span>
+                </div>
+                <div class="credential-badge blue">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <span>Power BI Data Analyst Certified</span>
+                </div>
+            </div>
+
+            <!-- Skills & Bar Section -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Kỹ năng</h2>
+                
+                <h3 class="skill-group-title">Định lượng & Nghiên cứu</h3>
+                <ul class="skills-list">
+                    <li>Mô hình hóa kinh tế lượng</li>
+                    <li>Phân tích tài chính</li>
+                    <li>Định giá doanh nghiệp</li>
+                    <li>Xây dựng mô hình tài chính</li>
+                    <li>Báo cáo Power BI</li>
+                </ul>
+
+                <h3 class="skill-group-title">Phần mềm & Tin học</h3>
+                <ul class="skills-list">
+                    <li>MOS Excel</li>
+                    <li>MOS Word</li>
+                    <li>MOS PowerPoint</li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- MAIN COLUMN (RIGHT) -->
+        <main class="main-content">
+            
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-user"></i> Tóm tắt chuyên môn</h2>
+                <p class="summary-text">
+                    Là sinh viên ngành Tài chính (<strong>GPA 3.52/4.0</strong>) chương trình tiếng Anh toàn phần tại Đại học Kinh tế TP.HCM (UEH). Đã thi đỗ <strong>CFA Level 1</strong> ngay trong lần thi đầu tiên, có nền tảng vững chắc về phân tích tài chính, mô hình hóa kinh tế lượng và định giá doanh nghiệp. Đồng tác giả của hai bài nghiên cứu khoa học phân tích về biến động chính sách thương mại và tác động lan tỏa chính sách tiền tệ của Cục Dự trữ Liên bang Mỹ (Fed) bằng các mô hình kinh tế lượng tiên tiến.
+                </p>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Giáo dục</h2>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Cử nhân ngành Tài chính</h3>
+                        <span class="timeline-date">2023 - Tháng 12/2026</span>
+                    </div>
+                    <p class="timeline-subtitle">Đại học Kinh tế TP. Hồ Chí Minh (UEH)</p>
+                    <p class="timeline-desc">
+                        Chương trình tiếng Anh toàn phần. Tập trung chuyên sâu vào Định giá tài sản, Tài chính doanh nghiệp và Nghiên cứu khoa học. 
+                        <strong>GPA tích lũy: 3.52 / 4.0</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Academic Research Experience -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-file-invoice-dollar"></i> Nghiên cứu khoa học</h2>
+                
+                <!-- Research 1 -->
+                <div class="research-item">
+                    <div class="research-header">
+                        <h3 class="research-title">Tác động của chiến tranh thương mại Mỹ - Trung đến hiệu suất thị trường chứng khoán khu vực Châu Á - Thái Bình Dương</h3>
+                        <span class="research-tag">iCOB 2025 / COBRP 2025</span>
+                    </div>
+                    <p class="research-methodology">Phương pháp: <span>Mô hình ARMAX-GARCH-M (TPU) & DCC-GARCH</span></p>
+                    <p class="research-desc">
+                        Phân tích cú sốc biến động chính sách thương mại (TPU), tỷ suất sinh lợi bất thường và sự lan tỏa biến động theo thời gian trên 12 thị trường chứng khoán Châu Á - Thái Bình Dương và 10 nhóm ngành thuộc chỉ VN-Index tại Việt Nam năm 2025. <strong>Đạt chứng nhận loại "Đạt"</strong> tại cuộc thi nghiên cứu khoa học sinh viên COBRP 2025 của UEH và <strong>đủ điều kiện tham gia hội thảo khoa học quốc tế iCOB 2025</strong>. Củng cố sức mạnh tài chính hướng tới Mục tiêu phát triển bền vững số 8.
+                    </p>
+                </div>
+
+                <!-- Research 2 -->
+                <div class="research-item">
+                    <div class="research-header">
+                        <h3 class="research-title">Phản ứng của thị trường chứng khoán đối với các đợt cắt giảm lãi suất của Fed</h3>
+                        <span class="research-tag">Thuyết trình cuộc thi CELG 2025</span>
+                    </div>
+                    <p class="research-methodology">Phương pháp: <span>Nghiên cứu sự kiện & Mô hình lan tỏa VAR Diebold-Yilmaz</span></p>
+                    <p class="research-desc">
+                        Đo lường các phản ứng ngắn hạn của thị trường và các nhóm ngành đối với thông báo của Fed, phân tích mức độ liên kết biến động giữa Mỹ và Việt Nam trong các chu kỳ 2019-2020 (đại dịch) và 2024-2025 (phục hồi). <strong>Được chọn để thuyết trình tại vòng chung kết cuộc thi nghiên cứu CELG 2025</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-briefcase"></i> Kinh nghiệm làm việc</h2>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Thực tập sinh Account</h3>
+                        <span class="timeline-date">Thực tập 3 tháng (2025)</span>
+                    </div>
+                    <p class="timeline-subtitle">Brainad Marketing Agency</p>
+                    <ul class="timeline-bullets">
+                        <li>
+                            <strong>Quản lý khách hàng & dự án:</strong> Hỗ trợ bộ phận quan hệ khách hàng trong việc điều phối các bản tóm tắt dự án (brief), đảm bảo tiến độ bàn giao và thống nhất yêu cầu giữa phòng Sáng tạo và khách hàng.
+                        </li>
+                        <li>
+                            <strong>Nghiên cứu thị trường:</strong> Tiến hành phân tích đối thủ cạnh tranh và khảo sát thị trường chuyên sâu để trích xuất các thông tin chi tiết hữu ích phục vụ cho các buổi thuyết trình dự án, định hình ý tưởng chiến dịch và đề xuất chiến lược truyền thông.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV_NgoThucHoang</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==========================================================================
+           RESET & SETUP (A4 AESTHETICS)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Printable A4 Page Container */
+        .cv-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            margin: 30px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 72mm 138mm;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Helper floating bar to prompt printing */
+        .print-helper {
+            max-width: 210mm;
+            margin: 20px auto 0;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 242, 254, 0.3);
+        }
+
+        /* ==========================================================================
+           LEFT SIDEBAR STYLING
+           ========================================================================== */
+        .sidebar {
+            background-color: #0f172a; /* Deep slate background */
+            color: #f8fafc;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .avatar-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .avatar-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #38bdf8;
+            background-color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .candidate-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .candidate-title {
+            font-size: 0.8rem;
+            color: #38bdf8;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sidebar Section Commons */
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-heading {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #38bdf8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        /* Contact Details */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+        }
+
+        .contact-item i {
+            color: #38bdf8;
+            width: 14px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        /* Credentials / Badges */
+        .credential-badge {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .credential-badge.gold {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.05) 100%) !important;
+            border: 1px solid rgba(245, 158, 11, 0.5) !important;
+            color: #fbbf24 !important;
+            font-weight: 700;
+        }
+
+        .credential-badge.gold i {
+            color: #fbbf24 !important;
+            text-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+        }
+
+        .credential-badge.blue i {
+            color: #38bdf8;
+        }
+
+        /* Skills Lists */
+        .skill-group-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skills-list {
+            list-style-type: none;
+            margin-bottom: 14px;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 0.9rem;
+            line-height: 1;
+            top: -1px;
+        }
+
+        /* ==========================================================================
+           MAIN CONTENT STYLING
+           ========================================================================== */
+        .main-content {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Content Section Commons */
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-heading {
+            font-size: 1.1rem;
+            color: #0f172a;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .section-heading i {
+            color: #0284c7;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 0.85rem;
+            color: #334155;
+            text-align: justify;
+        }
+
+        /* Academic Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 18px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #0284c7;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.8rem;
+            color: #0284c7;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.78rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .timeline-bullets {
+            margin-top: 6px;
+            list-style-type: none;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 0.78rem;
+            color: #475569;
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        .timeline-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0284c7;
+            font-weight: bold;
+        }
+
+        /* Research Item Block */
+        .research-item {
+            margin-bottom: 14px;
+        }
+
+        .research-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3px;
+        }
+
+        .research-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+        }
+
+        .research-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #0284c7;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: 10px;
+            background: #e0f2fe;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .research-methodology {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .research-methodology span {
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .research-desc {
+            font-size: 0.78rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           PRINT STYLING STUFF (CRITICAL)
+           ========================================================================== */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .print-helper {
+                display: none;
+            }
+            .cv-page {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating helper bar for printing (Hidden during printing) -->
+    <div class="print-helper no-print">
+        <span>📄 <strong>A4 Printable CV</strong> is generated. Press Print or Save as PDF.</span>
+        <button class="print-btn" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> Save as PDF
+        </button>
+    </div>
+
+    <!-- Main CV Sheet -->
+    <div class="cv-page">
+        
+        <!-- SIDEBAR (LEFT) -->
+        <aside class="sidebar">
+            
+            <!-- Avatar & Header -->
+            <div class="avatar-section">
+                <div class="avatar-container">
+                    <img src="Anhcv_shirt_white_polished.png" alt="Ngo Thuc Hoang" class="avatar-img" onerror="this.src='Anhcv.jpg'">
+                </div>
+                <h1 class="candidate-name">Ngô Thúc Hoàng</h1>
+                <p class="candidate-title">Finance & Quantitative Analyst</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Contact Info</h2>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+84 83 260 0277</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:ngothuchoang150905@gmail.com">ngothuchoang150905@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/th%C3%BAc-ho%C3%A0ng-ng%C3%B4-92a282347" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Ho Chi Minh City, Vietnam</span>
+                </div>
+            </div>
+
+            <!-- Credentials Section -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Credentials</h2>
+                <div class="credential-badge gold">
+                    <i class="fa-solid fa-award"></i>
+                    <span>CFA Level 1 Passed</span>
+                </div>
+                <div class="credential-badge blue">
+                    <i class="fa-solid fa-language"></i>
+                    <span>IELTS Academic 6.0</span>
+                </div>
+                <div class="credential-badge blue">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <span>Power BI Data Analyst Certified</span>
+                </div>
+            </div>
+
+            <!-- Skills & Bar Section -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Skills</h2>
+                
+                <h3 class="skill-group-title">Quantitative & Research</h3>
+                <ul class="skills-list">
+                    <li>Econometric Modeling</li>
+                    <li>Financial Analysis</li>
+                    <li>Corporate Valuation</li>
+                    <li>Financial Modeling</li>
+                    <li>Power BI Dashboards</li>
+                </ul>
+
+                <h3 class="skill-group-title">Software & Office</h3>
+                <ul class="skills-list">
+                    <li>MOS Excel</li>
+                    <li>MOS Word</li>
+                    <li>MOS PowerPoint</li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- MAIN COLUMN (RIGHT) -->
+        <main class="main-content">
+            
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-user"></i> Professional Summary</h2>
+                <p class="summary-text">
+                    An academically distinguished and highly analytical Finance student (<strong>GPA 3.52/4.0</strong>) at UEH University. <strong>Passed CFA Level 1</strong> on the first attempt and possesses a robust foundation in financial analysis, econometric modeling, and quantitative research. Co-authored two significant research papers analyzing trade policy uncertainty and U.S. Federal Reserve monetary spillovers using advanced econometric models.
+                </p>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Bachelor of Finance</h3>
+                        <span class="timeline-date">2023 - Dec 2026</span>
+                    </div>
+                    <p class="timeline-subtitle">University of Economics Ho Chi Minh City (UEH)</p>
+                    <p class="timeline-desc">
+                        Fully English-taught curriculum. Focus on Asset Pricing, Corporate Finance, and Research. 
+                        <strong>Cumulative GPA: 3.52 / 4.0</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Academic Research Experience -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-file-invoice-dollar"></i> Academic Research</h2>
+                
+                <!-- Research 1 -->
+                <div class="research-item">
+                    <div class="research-header">
+                        <h3 class="research-title">Impact of the US-China Trade War on Asia Pacific's Stock Market Performance</h3>
+                        <span class="research-tag">iCOB 2025 / COBRP 2025</span>
+                    </div>
+                    <p class="research-methodology">Methodology: <span>ARMAX-GARCH-M (TPU) & DCC-GARCH models</span></p>
+                    <p class="research-desc">
+                        Analyzed Trade Policy Uncertainty (TPU) shocks, abnormal returns, and time-varying volatility spillovers across 12 APAC stock markets and 10 Vietnam VN-Index sectors in 2025. <strong>Awarded "Passed"</strong> at UEH's COBRP 2025 and <strong>eligible for the iCOB 2025 conference</strong>. Linked financial resilience to SDG 8.
+                    </p>
+                </div>
+
+                <!-- Research 2 -->
+                <div class="research-item">
+                    <div class="research-header">
+                        <h3 class="research-title">Stock Market Reactions to U.S. Fed Rate Cuts: A Comparative Event Study</h3>
+                        <span class="research-tag">CELG 2025 Presentation</span>
+                    </div>
+                    <p class="research-methodology">Methodology: <span>Event Study & Diebold-Yilmaz VAR spillover models</span></p>
+                    <p class="research-desc">
+                        Measured short-term equity/sectoral reactions to Fed announcements and volatility connectedness between the U.S. and Vietnam during the 2019-2020 and 2024-2025 cycles. <strong>Selected for presentation at the CELG 2025 research competition</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="section">
+                <h2 class="section-heading"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Account Intern</h3>
+                        <span class="timeline-date">3-Month Placement (2025)</span>
+                    </div>
+                    <p class="timeline-subtitle">Brainad Marketing Agency</p>
+                    <ul class="timeline-bullets">
+                        <li>
+                            <strong>Client & Project Management:</strong> Supported client relations team in coordinating briefs, ensuring timely operational deliveries and alignment between creative departments and client requirements.
+                        </li>
+                        <li>
+                            <strong>Market Intelligence:</strong> Conducted comprehensive competitor analysis and market research to extract insights for pitches, campaign conceptualizations, and strategy proposals.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
